@@ -19,11 +19,15 @@ h1{
 }
 
 h1::after {
-    content: "";
-    width:20px;
-    height: 5px;
+    content: '';
+    display: block;
+    width: 50px;
+    height: 2px;
+    background-color: #fff;
     position: absolute;
-    top: 20px;
+    bottom: -10px;
+    left: 45%;
+    transform: translateX(-50%);
 
 }
 
@@ -44,7 +48,8 @@ h1::after {
     gap: 15px;
     background-color: #b022f3;
     border-radius: 15px;
-    box-shadow: 1px 1px 5px rgba(48, 0, 63, 0.5);
+    box-shadow: 2px 2px 5px rgba(48, 0, 63, 0.5),
+                inset 1px 1px 5px rgba(48, 0, 63, 0.5);
 }
 
 .image-holder {
@@ -62,6 +67,26 @@ h1::after {
     object-fit: cover;
 }
 
+h2 {
+    text-align: center;
+    font-size: 25px;
+    font-weight: 600;
+    /* padding: 10px 0; */
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    bottom: -10px;
+    left: 15%;
+    transform: translateX(-45%);
+}
+
 .fam-word-holder p {
     text-align: center;
     font-size: 16px;
@@ -69,8 +94,79 @@ h1::after {
     padding: 15px 3rem ;
 }
 
-.biography-holder ul {
+
+.biography-holder ul li {
+    list-style-image: url('./thumbs-up.svg');
+    list-style-position: inside;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: justify;
+    padding: 5px 10px;
+}
+
+li span {
+    color: #e4e0e0;
+    padding: 10px 10px 5px 30px;
+}
+
+@media screen and (min-width: 768px) {
+    .bio-container {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+    h1::after {
+        left: 47%;
+        transform: translateX(-50%);
+    }
+
+    .famous-holder {
+        flex-direction: row;
+        width: 100%;
+        margin: 15px 5rem;
+    }
+
+    .biography-holder {
+        margin: 15px 5rem;
+    }
+
+    .image-holder {
+        width: 30%;
+    }
+
+    h2 {
+        font-size: 30px;
+        display: block;
+    }
+
+    .fam-word-holder p {
+        display: flex;
+        padding: 20px 3rem;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+    }
+
+    .fam-word-holder .first-par {
+        padding-top: 6rem; 
+     }
+
+    .biography-holder ul {
+        padding: 0 20px;
+    }
+    .biography-holder ul li {
+        font-size: 18px;
+    }
+    li span {
+        padding: 10px 10px 5px 30px;
+    }
     
+}
+
+@media screen and (min-width: 1024px){
+    .bio-container {
+        max-width: 1200px;
+    }
 }
 
 
